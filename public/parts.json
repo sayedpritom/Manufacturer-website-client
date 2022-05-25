@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "1500kv Drone Motor Brushless",
+        "image": "https://image.made-in-china.com/2f0j00oqHfzNFahEbj/2206-1500kv-Drone-Motor-Brushless-Electric-Motor-BLDC-Motor-for-Drone-RC-Toy.jpg",
+        "description": "920Kv Brushless DC Motor is a Brushless DC electric motor (BLDC motors, BL motors) also known as electronically commutated motors (ECMs, EC motors) are synchronous motors that are powered by a DC electric source via an integrated inverter switching power supply, which produces an AC electric signal to drive the motor. Features of DJI 2212 920KV Brushless Motor: KV(rpm/v): 920. Max Power: 370W. Max Thrust: 1200 grams. Weight: 53 grams. Shaft Diameter: 4mm. Shaft Length: 49mm. Recommended Propeller for battery: 12×4.5 for 2S battery; 10×4.5 for 4S battery. Battery: 2S-3S Li-Po. ESC (A): FMT 30A (recommended).",
+        "minimumOrder": 100,
+        "stock": 600,
+        "price": 12
+    },
+    {
+        "_id": 2,
+        "name": "DJI 2212 920KV Brushless DC Motor",
+        "image": "https://robu.in/wp-content/uploads/2017/05/CW.png",
+        "description": "If you are wandering to build a drone and don’t know what will be the best motor for you then worry no more, we have got your back. At Robu, we have everything for you to get started with your drone project. This motor provides a Motor kV of 920 and gives a thrust of 500 gm. In the field of Multirotors, there are so many brands that are making drone motors but Ready to Sky is giving us the best quality of drone motor at an affordable price.",
+        "minimumOrder": 50,
+        "stock": 200,
+        "price": 22
+    },
+    {
+        "_id": 3,
+        "name": "T-Motor U10 Kv80 High Efficiency RC BLDC Motor for Uav",
+        "image": "https://image.made-in-china.com/2f0j00DEQUdKtBqIul/T-Motor-U10-Kv80-High-Efficiency-RC-BLDC-Motor-for-Uav.jpg",
+        "description": "U Series Motor is themost high-end with high performance and excellent efficiency in energy, flight time and blance. The U motor is from U3-U15 (U3, U5, U7, U8, U10, U11, U12, U13, U15). Kindly check more details in the below description and be free to contact us.",
+        "minimumOrder": 100,
+        "stock": 1000,
+        "price": 30
+    },
+    {
+        "_id": 4,
+        "name": "22mm 5V DC RC Inrunner Brushless Motor",
+        "image": "https://sc04.alicdn.com/kf/HTB1py15XLfsK1RjSszbq6AqBXXap.jpg",
+        "description": "Structure: Inner runner rotor+integrated hall sensor+driver, Size: Dia22*L43.5mm, Shaft Dia: 2mm, Certification: ISO9001, ROHS, Rated Voltage: 5V DC, Endplay: 0.5mm Max, Lifetime: 10000H Min, Phase: 3, Rotation: CW/CCW controllable, No load:  7000RPM 120mA, Rated:  5600RPM 3mNm, At stall: 15.14mNm 1.46A",
+        "minimumOrder": 300,
+        "stock": 1500,
+        "price": 25
+    },
+    {
+        "_id": 5,
+        "name": "High power RC brushless motor V4004 KV300",
+        "image": "https://p.globalsources.com/IMAGES/PDT/B1155483343/High-power-RC-brushless-motor.jpg",
+        "description": "Place of origin: CN, GUA, Brand name: Sunnysky, Uses: vehicles and remote control toys, Brushless motor KV: KV300, Stator diameter: 40mm, Stator thickness: 4mm, Rotor diameter: 43.6mm, Application: multiple rotor, Max continuous power: 250W, Max continuous current: 10A/60S, Max Li-Po cell: 4-6S, Weight: 51g",
+        "minimumOrder": 500,
+        "stock": 1800,
+        "price": 50
+    },
+    {
+        "_id": 6,
+        "name": "Emax Freestyle 2306 1700KV",
+        "image": "https://www.myfpvstore.com/wp-content/uploads/2019/08/photo-8598_1.jpg",
+        "description": "Place of origin: CN, GUA, Brand name: Emax, Uses: vehicles and remote control toys, Brushless motor KV: KV300, Stator diameter: 40mm, Stator thickness: 4mm, Rotor diameter: 43.6mm, Application: multiple rotor, Max continuous power: 250W, Max continuous current: 10A/60S, Max Li-Po cell: 4-6S, Weight: 45g",
+        "minimumOrder": 400,
+        "stock": 3600,
+        "price": 50
+    }
+]
