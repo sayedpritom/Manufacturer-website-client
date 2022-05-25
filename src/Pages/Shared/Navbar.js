@@ -17,7 +17,7 @@ const Navbar = () => {
                             <li><Link to='/orders'>Orders</Link></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost normal-case text-xl">Max Motor</a>
+                    <Link to="/" className="btn btn-ghost normal-case text-xl">Max Motor</Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
@@ -28,7 +28,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn btn-primary">Sign In</a>
+                    <Link to="/login" class="btn btn-primary">Log In</Link>
                 </div>
                 <div class="dropdown dropdown-end">
                     <label tabindex="0" class="btn btn-ghost btn-circle avatar">

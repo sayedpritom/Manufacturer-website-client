@@ -9,12 +9,11 @@ const Items = () => {
         .then(res => res.json())
         .then(data => setItems(data))
     }, [])
-    console.log(items);
     return (
         <div>
             <div className="my-28">
-                <div className="text-center">
-                    <h2 className="text-primary text-xl font-bold uppercase">Pick your item</h2>
+                <div className="text-center my-5">
+                    <h2 className="text-primary text-xl font-bold uppercase">Pick your items</h2>
                     <h2 className="text-4xl">We have all types of BLDC motors</h2>
                 </div>
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5">

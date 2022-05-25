@@ -1,0 +1,51 @@
+[
+    {
+        "_id": 1,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    },
+    {
+        "_id": 2,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    },
+    {
+        "_id": 3,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    },
+    {
+        "_id": 4,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    },
+    {
+        "_id": 5,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    },
+    {
+        "_id": 6,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    },
+    {
+        "_id": 7,
+        "name": "Vladimir Putin",
+        "image": "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s615/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
+        "review": "Max motor is a great electronic manufacturer. It's been seven years of our partnership",
+        "rating": 5
+    }
+]
