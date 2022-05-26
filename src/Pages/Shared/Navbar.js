@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const [displayName, setDisplayName] = useState('');
+
+    useEffect(() => {
+        if (user) {
+            const myInterval = setInterval(myTimer, 2000);
+
+            function myTimer() {
+                if (user.displayName) {
+                    setDisplayName(user.displayName)
+                    clearInterval(myInterval)
+                }
+            }
+        }
+
+    }, [user])
+
+
+    const logout = () => {
+        signOut(auth);
+    };
     return (
         <div className="max-w-7xl mx-auto px-2">
             <div class="navbar bg-base-100">
@@ -15,6 +39,7 @@ const Navbar = () => {
                             <li><Link to='/blogs'>Blogs</Link></li>
                             <li><Link to='/portfolio'>Portfolio</Link></li>
                             <li><Link to='/orders'>Orders</Link></li>
+                            {user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>}
                         </ul>
                     </div>
                     <Link to="/" className="btn btn-ghost normal-case text-xl">Max Motor</Link>
@@ -25,28 +50,21 @@ const Navbar = () => {
                         <li><Link to='/blogs'>Blogs</Link></li>
                         <li><Link to='/portfolio'>Portfolio</Link></li>
                         <li><Link to='/orders'>Orders</Link></li>
+                        {user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>}
                     </ul>
                 </div>
-                <div class="navbar-end">
-                    <Link to="/login" class="btn btn-primary">Log In</Link>
-                </div>
-                <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                        <div class="w-10 rounded-full">
-                            <img src="https://api.lorem.space/image/face?hash=33791" />
-                        </div>
-                    </label>
-                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a class="justify-between">
-                                Profile
-                                <span class="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                {user ?
+                    <div class="navbar-end">
+                        <h3 className="text-primary font-bold mx-4">
+                            {displayName}
+                        </h3>
+                        <button class="btn btn-primary" onClick={logout}>Log Out</button>
+                    </div>
+                    :
+                    <div class="navbar-end">
+                        <Link to="/login" class="btn btn-primary">Log In</Link>
+                    </div>
+                }
             </div>
         </div>
     );

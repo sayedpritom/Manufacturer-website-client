@@ -13,7 +13,6 @@ const Home = () => {
             <div className="max-w-7xl mx-auto">
                 <Banner></Banner>
                 <Items></Items>
-
             </div>
             <MechanicalNeed></MechanicalNeed>
             <div className="max-w-7xl mx-auto">
