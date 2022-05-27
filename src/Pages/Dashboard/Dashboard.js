@@ -1,9 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
-
-
-
     return (
         <div className="max-w-7xl mx-auto my-10">
             <div className="drawer drawer-mobile">
