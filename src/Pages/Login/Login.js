@@ -46,15 +46,15 @@ const Login = () => {
 
     return (
         <div>
-            <div class="card w-96 lg:w-1/3 mx-auto my-10 bg-base-100 shadow-xl p-5">
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title">Please Login to proceed</h2>
+            <div className="card w-96 lg:w-1/3 mx-auto my-10 bg-base-100 shadow-xl p-5">
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">Please Login to proceed</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-                        <input type="email" {...register("email", { required: true })} placeholder="Email Address" class="input input-bordered input-info w-full my-3 max-w-md" />
+                        <input type="email" {...register("email", { required: true })} placeholder="Email Address" className="input input-bordered input-info w-full my-3 max-w-md" />
                         <br />
-                        <input type="password" {...register("password", { required: true })} placeholder="Password" class="input input-bordered input-info w-full my-3 max-w-md" />
+                        <input type="password" {...register("password", { required: true })} placeholder="Password" className="input input-bordered input-info w-full my-3 max-w-md" />
                         <br />
-                        <input type="submit" class="btn btn-primary" value="Login" />
+                        <input type="submit" className="btn btn-primary" value="Login" />
                     </form>
                 </div>
                 <p className="text-red-500 text-center">{errorMessage}</p>

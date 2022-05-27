@@ -15,8 +15,8 @@ const BusinessSummary = () => {
                 <h1 className="text-4xl text-primary text-center font-bold py-0 uppercase leading-relaxed">We are one of the largest <br /> manufacturers in the world</h1>
                 <h4 className="text-xl text-center font-bold leading-relaxed">We Believe In Manufacturing Durable Machines</h4>
             </div>
-                <div class="divider"></div>
-            <div class="grid grid-cols-4 justify-items-center text-center gap-5 mb-10">
+                <div className="divider"></div>
+            <div className="grid grid-cols-4 justify-items-center text-center gap-5 mb-10">
                 <div>
                     <div className="icon text-5xl text-primary font-bold">
                         <FontAwesomeIcon icon={faClock} />
@@ -46,7 +46,7 @@ const BusinessSummary = () => {
                     <p className="text-xl text-primary">Awards Won</p>
                 </div>
             </div>
-                <div class="divider"></div>
+                <div className="divider"></div>
         </section>
     );
 };

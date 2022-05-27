@@ -4,11 +4,14 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { format, formatDistance, formatRelative, subDays } from 'date-fns';
 
 const PlaceOrder = () => {
 
     const [user] = useAuthState(auth);
     const { id } = useParams();
+    const [date, setDate] = useState(new Date());
+    const formattedDate = format(date, 'PP');
 
     const [item, setItem] = useState({});
     const [invalidInput, setInvalidInput] = useState('')
@@ -27,6 +30,9 @@ const PlaceOrder = () => {
 
 
     const onSubmit = data => {
+        data.item= name;
+        data.price= price;
+        data.image= image;
         fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
@@ -58,12 +64,12 @@ const PlaceOrder = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-10 py-20">
-            <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl">
                 <div className="max-w-xs mr-auto" >
                     <figure><img src={image} alt="Album" /></figure>
                 </div>
-                <div class="card-body">
-                    <h2 class="text-primary font-medium text-3xl my-3">Product Name: {name}</h2>
+                <div className="card-body">
+                    <h2 className="text-primary font-medium text-3xl my-3">Product Name: {name}</h2>
                     <p>Product Description: {description}</p>
                     <p className="text-xl font-medium">Available in stock: {stock}</p>
                     <p className="text-xl font-medium">Minimum Order Quantity: {minimumOrder}</p>
@@ -71,19 +77,21 @@ const PlaceOrder = () => {
                     <hr />
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* user name */}
-                        <input type="text" {...register("name", { required: true })} value={user.displayName} readOnly class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("name")} value={user.displayName} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* email address */}
-                        <input type="text" {...register("email", { required: true })} value={user.email} readOnly class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("email")} value={user.email} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* Item Name */}
-                        <input type="text" {...register("item", { required: true })} value={name} readOnly class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("item")} value={name} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        {/* price */}
+                        <input type="text" {...register("price")} value={"$"+price} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* order date */}
-                        <input type="text" {...register("item", { required: true })} value={name} readOnly class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("date")} value={formattedDate} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* phone number */}
-                        <input type="text" {...register("phone", { required: true })} placeholder="Enter Your Phone Number" class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("phone", { required: true })} placeholder="Enter Your Phone Number" className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* shipping address */}
-                        <input type="text" {...register("address", { required: true })} placeholder="Enter Your Address" class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("address", { required: true })} placeholder="Enter Your Address" className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* order quantity */}
-                        <input type="number" placeholder="Please enter quantity" {...register("quantity", { required: true })} class="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="number" placeholder="Please enter quantity" {...register("quantity", { required: true })} className="input input-bordered input-md w-full max-w-xs m-2" />
 
                         {errors.phone && <span className="block ml-2 text-red-400">{errors.phone && 'Phone'} is required</span>}
                         {errors.address && <span className="block ml-2 text-red-400">{errors.address && 'Address'} is required</span>}
