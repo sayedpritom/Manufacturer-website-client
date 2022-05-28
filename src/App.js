@@ -24,6 +24,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import NotFound from './Pages/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
+import Portfolio from './Pages/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/item/:id" element={
           <RequireAuth>
