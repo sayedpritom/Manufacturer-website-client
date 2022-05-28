@@ -4,7 +4,7 @@ import Product from './Product';
 
 const ManageProducts = () => {
 
-    const { data: items, isLoading, refetch } = useQuery('items', () => fetch(`http://localhost:5000/parts`, {
+    const { data: items, isLoading, refetch } = useQuery('items', () => fetch(`https://vast-citadel-09653.herokuapp.com/parts`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

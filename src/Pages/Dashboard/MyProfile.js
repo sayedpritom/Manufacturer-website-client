@@ -11,7 +11,7 @@ const MyProfile = () => {
     let { education, location, phone, linkedIn } = userDetails;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userDetails/${email}`, {
+        fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
             headers: {
                 method: 'Get',
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -54,7 +54,7 @@ const MyProfile = () => {
 
     const onSubmit = () => {
         console.log(userDetails)
-        fetch(`http://localhost:5000/userDetails/${email}`, {
+        fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
             method: 'PUT',
             headers: {
                 'content-Type': 'application/json',

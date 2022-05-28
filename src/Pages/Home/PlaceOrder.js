@@ -23,7 +23,7 @@ const PlaceOrder = () => {
     const { _id, image, name, description, minimumOrder, stock, price } = item;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${id}`)
+        fetch(`https://vast-citadel-09653.herokuapp.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setItem(data[0]))
     }, [])
@@ -33,7 +33,7 @@ const PlaceOrder = () => {
         data.item= name;
         data.price= price;
         data.image= image;
-        fetch('http://localhost:5000/order', {
+        fetch('https://vast-citadel-09653.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

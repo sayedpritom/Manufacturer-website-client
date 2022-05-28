@@ -4,15 +4,16 @@ import ManageAnOrder from './ManageAnOrder';
 
 const ManageAllOrders = () => {
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/allOrders/`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://vast-citadel-09653.herokuapp.com/allOrders/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }}
+        }
+    }
     )
         .then(response => response.json()));
-    console.log(orders)
+
     return (
         <div>
             <div className="overflow-x-auto">

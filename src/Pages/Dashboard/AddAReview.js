@@ -12,7 +12,7 @@ const AddAReview = () => {
     const imgbbAPIKey = 'ed05dfbb9cd0531dd8532fdb27b4be2b';
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://vast-citadel-09653.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

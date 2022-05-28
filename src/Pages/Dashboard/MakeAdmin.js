@@ -7,7 +7,7 @@ const MakeAdmin = () => {
 
     // const [users, setUsers] = useState([]);
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/users`, {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`https://vast-citadel-09653.herokuapp.com/users`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

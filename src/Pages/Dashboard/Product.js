@@ -6,7 +6,7 @@ const Product = ({ item, index, refetch }) => {
     const { _id, image, name, quantity, price, date, phone } = item;
 
     const handleRemove = () => {
-        fetch(`http://localhost:5000/item/${_id}`, {
+        fetch(`https://vast-citadel-09653.herokuapp.com/item/${_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

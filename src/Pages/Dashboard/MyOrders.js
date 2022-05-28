@@ -11,12 +11,12 @@ const MyOrders = () => {
     // const [orders, setOrders] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/orders/${user?.email}`)
+    //     fetch(`https://vast-citadel-09653.herokuapp.com/orders/${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => setOrders(data))
     // }, [])
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/${user?.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://vast-citadel-09653.herokuapp.com/orders/${user?.email}`, {
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

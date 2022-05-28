@@ -24,7 +24,7 @@ const Order = ({ order, refetch }) => {
     const handleDelete = async () => {
         const result = await confirm("Are you sure?", options);
         if (result) {
-            fetch(`http://localhost:5000/delete/${_id}`, {
+            fetch(`https://vast-citadel-09653.herokuapp.com/delete/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-type': 'application/json',
@@ -38,7 +38,6 @@ const Order = ({ order, refetch }) => {
                     refetch();
                 })
         }
-        console.log("You click No!");
         return
     };
 

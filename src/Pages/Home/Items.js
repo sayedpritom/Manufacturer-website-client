@@ -5,7 +5,7 @@ const Items = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/parts')
+        fetch('https://vast-citadel-09653.herokuapp.com/parts')
         .then(res => res.json())
         .then(data => setItems(data))
     }, [])

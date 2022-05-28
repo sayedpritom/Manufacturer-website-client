@@ -41,7 +41,6 @@ const Navbar = () => {
                             <li><Link to='/home'>Home</Link></li>
                             <li><Link to='/blogs'>Blogs</Link></li>
                             <li><Link to='/portfolio'>Portfolio</Link></li>
-                            <li><Link to='/orders'>Orders</Link></li>
                             {user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>}
                         </ul>
                     </div>
@@ -52,7 +51,6 @@ const Navbar = () => {
                         <li><Link to='/home'>Home</Link></li>
                         <li><Link to='/blogs'>Blogs</Link></li>
                         <li><Link to='/portfolio'>Portfolio</Link></li>
-                        <li><Link to='/orders'>Orders</Link></li>
                         {user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>}
                     </ul>
                 </div>

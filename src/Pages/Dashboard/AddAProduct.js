@@ -35,7 +35,7 @@ const AddAProduct = () => {
                         image: img
                     }
                     // send data to database
-                    fetch('http://localhost:5000/addProduct', {
+                    fetch('https://vast-citadel-09653.herokuapp.com/addProduct', {
                         method: 'POST',
                         headers: {
                             'content-Type': 'application/json',
@@ -88,7 +88,7 @@ const AddAProduct = () => {
                 {/* price */}
                 <input type="text" {...register("price", { required: true })} placeholder="Product Price" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.price && <span className="block ml-2 text-red-400">{errors.price && 'price'} is required</span>} <br />
-                <input className={`btn btn-primary ml-2`} type="submit" value="Place Order" />
+                <input className={`btn btn-primary ml-2`} type="submit" value="Add Product" />
             </form>
         </div>
     );
