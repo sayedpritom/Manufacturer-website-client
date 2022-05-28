@@ -38,6 +38,15 @@ const Blogs = () => {
 
                 </div>
             </div>
+            <div class="card w-md bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 className="text-3xl text-primary">How does prototypical inheritance work?</h3>
+                    <p>
+
+                        Prototypical inheritance is a feature in javascript used to add methods and properties in objects. By this method an object can inherit the properties and methods of another object. </p>
+
+                </div>
+            </div>
         </div>
     );
 };
