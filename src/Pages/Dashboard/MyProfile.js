@@ -8,55 +8,66 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { displayName: name, photoURL: image, email } = user;
     const [userDetails, setUserDetails] = useState({})
-    let {education, location, phone, linkedIn} = userDetails;
+    let { education, location, phone, linkedIn } = userDetails;
 
     useEffect(() => {
-        fetch('http://localhost:5000/userDetails')
+        fetch(`http://localhost:5000/userDetails/${email}`, {
+            headers: {
+                method: 'Get',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
-            .then(data => setUserDetails(data[0]))
+            .then(data => {
+                console.log(data);
+                setUserDetails(data)
+            })
     }, [])
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-    
+
     const educationInput = watch("education");
     const locationInput = watch("location");
     const phoneInput = watch("phone");
     const linkedInInput = watch("linkedIn");
 
     useEffect(() => {
-        const newUser = {education: educationInput, location, phone, linkedIn};
+        const newUser = { education: educationInput, location, phone, linkedIn };
         setUserDetails(newUser);
     }, [educationInput])
 
     useEffect(() => {
-        const newUser = {location: locationInput, education, phone, linkedIn};
+        const newUser = { location: locationInput, education, phone, linkedIn };
         setUserDetails(newUser);
     }, [locationInput])
 
     useEffect(() => {
-        const newUser = {phone: phoneInput, location, education, linkedIn};
+        const newUser = { phone: phoneInput, location, education, linkedIn };
         setUserDetails(newUser);
     }, [phoneInput])
 
     useEffect(() => {
-        const newUser = {linkedIn: linkedInInput, location, education, phone};
+        const newUser = { linkedIn: linkedInInput, location, education, phone };
         setUserDetails(newUser);
     }, [linkedInInput])
 
 
-
     const onSubmit = () => {
+        console.log(userDetails)
         fetch(`http://localhost:5000/userDetails/${email}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json',
+                'content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(userDetails)
         })
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 if (data.acknowledged) {
-                    toast.success('Information Saved Successfully');
+                    console.log(data)
+                    toast.success('Information Updated Successfully');
                     reset();
                 }
             })
@@ -81,15 +92,15 @@ const MyProfile = () => {
                                 </div>
                                 <div>
                                     <label for="location">Location:</label> <br />
-                                    <input type="text" {...register("location")} value={userDetails.location}  className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("location")} value={userDetails.location} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                                 <div>
                                     <label for="phone">Phone Number:</label> <br />
-                                    <input type="text" {...register("phone")} value={userDetails.phone}  className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("phone")} value={userDetails.phone} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                                 <div>
                                     <label for="LinkedIn">LinkedIn Profile:</label> <br />
-                                    <input type="text" {...register("linkedIn")} value={userDetails.linkedIn}  className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("linkedIn")} value={userDetails.linkedIn} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                             </div>
                             <input className={`btn btn-primary my-4 ml-2`} type="submit" value="Update Information" />

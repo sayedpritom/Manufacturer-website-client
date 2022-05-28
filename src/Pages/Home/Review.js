@@ -12,7 +12,7 @@ const Review = ({ userReview }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{review}</p>
                     <div className="rating">
-                        {[...Array(parseInt(rating)).keys()].map(rating => <FontAwesomeIcon icon={faStar} />)}
+                        {[...Array(parseInt(rating)).keys()].map((rating, index) => <FontAwesomeIcon key={index} icon={faStar} />)}
                     </div>
                 </div>
             </div>

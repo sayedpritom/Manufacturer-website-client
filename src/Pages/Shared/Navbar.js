@@ -12,7 +12,7 @@ const Navbar = () => {
 
     useEffect(() => {
         if (user) {
-            const myInterval = setInterval(myTimer, 2000);
+            const myInterval = setInterval(myTimer, 500);
 
             function myTimer() {
                 if (user.displayName) {
@@ -27,6 +27,7 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     };
     return (
         <div className="max-w-7xl mx-auto px-2">

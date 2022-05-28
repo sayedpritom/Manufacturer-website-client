@@ -1,30 +1,18 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
-import { useEffect, useState } from 'react';
-import Order from './Order';
 import { useQuery } from 'react-query';
+import ManageAnOrder from './ManageAnOrder';
 
-const MyOrders = () => {
-    const [user] = useAuthState(auth);
+const ManageAllOrders = () => {
 
-    // const [orders, setOrders] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/orders/${user?.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setOrders(data))
-    // }, [])
-
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/${user?.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/allOrders/`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }
+        }}
     )
         .then(response => response.json()));
-
+    console.log(orders)
     return (
         <div>
             <div className="overflow-x-auto">
@@ -42,7 +30,7 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders?.map((order, index) => <Order key={order._id} order={order} index={index} refetch={refetch}></Order>)}
+                        {orders?.map((order, index) => <ManageAnOrder key={order._id} order={order} index={index} refetch={refetch}></ManageAnOrder>)}
                     </tbody>
                 </table>
             </div>
@@ -50,4 +38,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageAllOrders;

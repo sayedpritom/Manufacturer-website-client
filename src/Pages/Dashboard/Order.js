@@ -27,7 +27,9 @@ const Order = ({ order, refetch }) => {
             fetch(`http://localhost:5000/delete/${_id}`, {
                 method: 'DELETE',
                 headers: {
-                    'Content-type': 'application/json'
+                    'Content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+
                 }
             })
                 .then(res => res.json())
