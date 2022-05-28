@@ -29,10 +29,15 @@ const Blogs = () => {
 
                 </div>
             </div>
+            <div class="card w-md bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 className="text-3xl text-primary">What is a unit test? Why it's necessary?</h3>
+                    <p>
+                        Unit testing is a process of software development in which the smallest testable parts of an application, called units, are individually and independently scrutinized for proper operation.
+                        Unit testing is necessary because it allows programmers to refactor code at a later date, and make sure the module still works correctly. Unit testing changes the nature of the debugging process. </p>
 
-            
-
-            
+                </div>
+            </div>
         </div>
     );
 };
