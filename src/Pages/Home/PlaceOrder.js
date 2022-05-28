@@ -22,17 +22,31 @@ const PlaceOrder = () => {
 
     const { _id, image, name, description, minimumOrder, stock, price } = item;
 
+    const [initialQuantity, setInitialQuantity] = useState(minimumOrder)
+
+    const handleChange = e => {
+        setInitialQuantity(e.target.value)
+    }
+
+    useEffect(() => {
+        setInitialQuantity(minimumOrder)
+    }, [minimumOrder])
+
+
     useEffect(() => {
         fetch(`https://vast-citadel-09653.herokuapp.com/parts/${id}`)
             .then(res => res.json())
-            .then(data => setItem(data[0]))
+            .then(data => {
+                setItem(data[0])
+            })
     }, [])
 
 
     const onSubmit = data => {
-        data.item= name;
-        data.price= price;
-        data.image= image;
+        data.item = name;
+        data.price = price;
+        data.image = image;
+        data.minimumOrder = initialQuantity;
         fetch('https://vast-citadel-09653.herokuapp.com/order', {
             method: 'POST',
             headers: {
@@ -84,7 +98,7 @@ const PlaceOrder = () => {
                         {/* Item Name */}
                         <input type="text" {...register("item")} value={name} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* price */}
-                        <input type="text" {...register("price")} value={"$"+price} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("price")} value={"$" + price} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* order date */}
                         <input type="text" {...register("date")} value={formattedDate} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* phone number */}
@@ -92,7 +106,7 @@ const PlaceOrder = () => {
                         {/* shipping address */}
                         <input type="text" {...register("address", { required: true })} placeholder="Enter Your Address" className="input input-bordered input-md w-full max-w-xs m-2" />
                         {/* order quantity */}
-                        <input type="number" placeholder="Please enter quantity" {...register("quantity", { required: true })} className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="number" {...register("quantity")} onChange={handleChange} value={initialQuantity} min={minimumOrder} max={stock} placeholder="Please enter quantity" className="input input-bordered input-md w-full max-w-xs m-2" />
 
                         {errors.phone && <span className="block ml-2 text-red-400">{errors.phone && 'Phone'} is required</span>}
                         {errors.address && <span className="block ml-2 text-red-400">{errors.address && 'Address'} is required</span>}

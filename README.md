@@ -1,18 +1,27 @@
-# Getting Started with Create React App
+# Warehouse Management Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Website Link: https://manufacturer-website-af272.web.app/
 
-## Available Scripts
+## Website Features and Functionalities:
+* Email/ password (login/Register) based login system
+* Private/Protected Route
+* Admin/User Dashboard
+* Functionalities like adding, deleting, updating data in database  through server api calls
+* Basic Payment System(To be implemented) 
 
-In the project directory, you can run:
+## Used technologies: 
+* HTML
+* CSS, Tailwind css, DaisyUI
+* React, react components, router, react hook form, react query 
+* Node.js, express.js
+* JSON Web Token,
+* Firebase(for website hosting, user login and registration)
+* Mongodb(for database)
+* Heroku(for server hosting)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
 
 ### `npm test`
 
