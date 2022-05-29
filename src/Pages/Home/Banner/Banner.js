@@ -12,7 +12,7 @@ return (
             <div className="flex-1 m-12 ">
                 <h3 className="text-primary text-2xl font-bold">Most popular Brushless Motors</h3>
                 <h2 className="text-5xl font-bold my-5 leading-normal">We Make The Best Selling <br /> Products In This Industry</h2>
-                <p className="mb-6 leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel odit, dolore magni deleniti et sit repudiandae, obcaecati inventore minus maxime deserunt fugiat ipsa quam. Optio quisquam consectetur error obcaecati corporis!
+                <p className="mb-6 leading-relaxed text-gray-500">The main difference between brushless or brushed motors is that the brushed variants are made of carbon while the brushless units use magnets to generate power. For this reason, brushless motors are better adapted, generate no friction, produce less heating and provide better performance
                 </p>
             </div>
         </div>

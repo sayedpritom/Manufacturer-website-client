@@ -26,6 +26,14 @@ const PlaceOrder = () => {
 
     const handleChange = e => {
         setInitialQuantity(e.target.value)
+
+        if (e.target.value > stock) {
+            setInvalidInput(`Order amount can not be greater than current stock. Current stock is ${stock}`);
+        } else if (e.target.value < minimumOrder) {
+            setInvalidInput(`Order amount can not be less than minimum order number. Minimum order is ${minimumOrder}`)
+        } else {
+            setInvalidInput(null);
+        }
     }
 
     useEffect(() => {
@@ -66,16 +74,6 @@ const PlaceOrder = () => {
                 console.error('Error:', error);
             });
     };
-
-    useEffect(() => {
-        if (parseInt(inputQuantity) > stock) {
-            setInvalidInput(`Order amount can not be greater than current stock. Current stock is ${stock}`);
-        } else if (parseInt(inputQuantity) < minimumOrder) {
-            setInvalidInput(`Order amount can not be less than minimum order number. Minimum order is ${minimumOrder}`)
-        } else {
-            setInvalidInput(null);
-        }
-    }, [inputQuantity, stock, minimumOrder, watch])
 
     return (
         <div className="max-w-7xl mx-auto px-10 py-20">

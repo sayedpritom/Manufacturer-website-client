@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import User from './User';
 
 const MakeAdmin = () => {
@@ -12,9 +13,14 @@ const MakeAdmin = () => {
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }}
+        }
+    }
     )
         .then(response => response.json()));
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>

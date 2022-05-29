@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import ManageAnOrder from './ManageAnOrder';
 
 const ManageAllOrders = () => {
@@ -13,6 +14,10 @@ const ManageAllOrders = () => {
     }
     )
         .then(response => response.json()));
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>

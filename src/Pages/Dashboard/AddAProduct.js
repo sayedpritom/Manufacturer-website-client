@@ -29,11 +29,12 @@ const AddAProduct = () => {
                     const product = {
                         name: data.name,
                         description: data.description,
-                        minimumAmount: data.minimumAmount,
+                        minimumOrder: data.minimumOrder,
                         stock: data.stock,
                         price: data.price,
                         image: img
                     }
+                    console.log(product)
                     // send data to database
                     fetch('https://vast-citadel-09653.herokuapp.com/addProduct', {
                         method: 'POST',
@@ -80,8 +81,8 @@ const AddAProduct = () => {
                 <textarea type="text" {...register("description", { required: true })} placeholder="Product Description" className="input input-bordered input-lg w-full max-w-lg h-40 m-2"></textarea> <br />
                 {errors.description && <span className="block ml-2 text-red-400">{errors.description && 'description'} is required</span>} <br />
                 {/* minimum order amount */}
-                <input type="number" {...register("minimumAmount", { required: true })} placeholder="Minimum Order Quantities" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
-                {errors.minimumAmount && <span className="block ml-2 text-red-400">{errors.minimumAmount && 'minimumAmount'} is required</span>} <br />
+                <input type="number" {...register("minimumOrder", { required: true })} placeholder="Minimum Order Quantities" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
+                {errors.minimumOrder && <span className="block ml-2 text-red-400">{errors.minimumOrder && 'minimumOrder'} is required</span>} <br />
                 {/* stock */}
                 <input type="text" {...register("stock", { required: true })} placeholder="Current Stock" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.stock && <span className="block ml-2 text-red-400">{errors.stock && 'stock'} is required</span>} <br />

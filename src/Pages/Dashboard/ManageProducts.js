@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import Product from './Product';
+import Loading from '../Shared/Loading';
 
 const ManageProducts = () => {
 
@@ -12,7 +13,11 @@ const ManageProducts = () => {
         }
     }
     )
-    .then(response => response.json()));
+        .then(response => response.json()));
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>
