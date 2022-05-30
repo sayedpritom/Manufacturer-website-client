@@ -54,7 +54,7 @@ const PlaceOrder = () => {
         data.item = name;
         data.price = price;
         data.image = image;
-        data.minimumOrder = initialQuantity;
+        data.quantity = initialQuantity;
         fetch('https://vast-citadel-09653.herokuapp.com/order', {
             method: 'POST',
             headers: {
