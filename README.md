@@ -14,7 +14,7 @@
 
 ## Used technologies in front-end: 
 * HTML, CSS, 
-* Tailwind css, DaisyUI
+* Tailwind CSS, DaisyUI
 * Font Awesome
 * React, react components, router, react hook form, react query, React Toastify
 * Firebase(for website hosting, user login and registration)
