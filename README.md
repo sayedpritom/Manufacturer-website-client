@@ -13,14 +13,11 @@
 9. Few extra routes: Blogs, Portfolio, 404 Not found. 
 
 ## Used technologies in front-end: 
-* HTML
-* CSS, Tailwind css, DaisyUI
-* React, react components, router, react hook form, react query 
-* Node.js, express.js
-* JSON Web Token,
+* HTML, CSS, 
+* Tailwind css, DaisyUI
+* Font Awesome
+* React, react components, router, react hook form, react query, React Toastify
 * Firebase(for website hosting, user login and registration)
-* Mongodb(for database)
-* Heroku(for server hosting)
 
 ## Back-end(server) code link: https://github.com/sayedpritom999/Manufacturer-website-server
 
