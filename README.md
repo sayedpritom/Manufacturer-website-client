@@ -2,14 +2,14 @@
 
 ## Live Website Link: https://manufacturer-website-af272.web.app/
 
-## Website Features and Functionalities:
-* Email/ password (login/Register) based login system
-* Private/Protected Route
+## Front-end features and functionalities of the website:
+* Email/ password (login/Register) based authentication system
+* Private/Protected Routes
 * Admin/User Dashboard
-* Functionalities like adding, deleting, updating data in database  through server api calls
+* Functionalities like adding, deleting, and updating data in the database  through server API calls
 * Basic Payment System(To be implemented) 
 
-## Used technologies: 
+## Used technologies in front-end: 
 * HTML
 * CSS, Tailwind css, DaisyUI
 * React, react components, router, react hook form, react query 
@@ -19,62 +19,27 @@
 * Mongodb(for database)
 * Heroku(for server hosting)
 
+## Back-end(server) code link: https://github.com/sayedpritom999/Manufacturer-website-server
 
+## In the back-end, the implemented APIs are: 
+1. Create users in MongoDB and issue a JWT token for the client
+2. Verify admin
+3. Create a new admin
+4. Get all users
+5. Get all orders
+6. Get all orders for a particular user
+7. Get a specific parts/item from the parts collection
+8. Delete a specific order from the orders collection
+9. Upload orders to the database & if already exists then replace that order
+10. Upload reviews to the database
+11. Get all the reviews from the database
+12. Upload the users' details to the database
+13. Upload new product to the database
+14. Delete a certain product
+15. Get the user's details from the database
 
-
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# manufacturer-website-client-side-sayedpritom999" 
+## Used technologies in the back-end: 
+* Node.js, express.js
+* JSON Web Token,
+* Mongodb(for database)
+* Heroku(for server hosting)
