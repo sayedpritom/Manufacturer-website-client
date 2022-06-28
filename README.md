@@ -1,13 +1,16 @@
-# Warehouse Management Website
+# Max Motor
 
-## Live Website Link: https://manufacturer-website-af272.web.app/
+## This is an electric parts manufacturer company's website. Live site: https://manufacturer-website-af272.web.app/
 
 ## Front-end features and functionalities of the website:
-* Email/ password (login/Register) based authentication system
-* Private/Protected Routes
-* Admin/User Dashboard
-* Functionalities like adding, deleting, and updating data in the database  through server API calls
-* Basic Payment System(To be implemented) 
+1. On the home page there are 5 sections(Header, Banner, Items/Parts, Introduction, Business Summary/Achievements, Reviews, and Footer)
+2. Email/ password (login/Register) based authentication system
+3. The "purchase" page is a private/protected route. This route redirects to the login page if the user is not logged in. After login, the user will be redirected to the page he/she wanted to go to. 
+4. Logged-in users can see an option in the header called dashboard. Inside the dashboard, the controls will be different for a normal user and for an admin.
+5. Normal users can place orders, leave reviews, and save their personal info on the site.
+6. An admin can also save his personal info but other things that an admin can do are: manage all the orders made by all the users, add new products to the site, make new admin, and manage listed products. 
+8. Basic Payment System(To be implemented) 
+9. Few extra routes: Blogs, Portfolio, 404 Not found. 
 
 ## Used technologies in front-end: 
 * HTML
