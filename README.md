@@ -1,6 +1,6 @@
 # Max Motor
 
-## This is an electric parts manufacturer company's website. Live site: https://manufacturer-website-af272.web.app/
+## This is an electric BLDC motor manufacturer company's website. Live site: https://manufacturer-website-af272.web.app/
 
 ## Front-end features and functionalities of the website:
 1. On the home page there are 5 sections(Header, Banner, Items/Parts, Introduction, Business Summary/Achievements, Reviews, and Footer)
