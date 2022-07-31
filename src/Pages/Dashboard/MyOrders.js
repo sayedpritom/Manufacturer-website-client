@@ -4,17 +4,10 @@ import auth from '../../firebase.init';
 import { useEffect, useState } from 'react';
 import Order from './Order';
 import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
-
-    // const [orders, setOrders] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(`https://vast-citadel-09653.herokuapp.com/orders/${user?.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setOrders(data))
-    // }, [])
 
     const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://vast-citadel-09653.herokuapp.com/orders/${user?.email}`, {
         headers: {
@@ -23,7 +16,11 @@ const MyOrders = () => {
         }
     }
     )
-        .then(response => response.json()));
+    .then(response => response.json()));
+
+    if(isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>
@@ -38,7 +35,7 @@ const MyOrders = () => {
                             <th>Price</th>
                             <th>Order Placed On</th>
                             <th>Phone</th>
-                            <th></th>
+                            <th>Pay or Cancel Order</th>
                         </tr>
                     </thead>
                     <tbody>

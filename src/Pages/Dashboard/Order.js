@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { confirm } from "react-confirm-box";
+import { Link } from 'react-router-dom';
 
 const Order = ({ order, refetch }) => {
-    const { _id, image, name, quantity, price, date, phone } = order;
+    const [deleting, setDeleting] = useState(false);
+
+    const { _id, image, name, quantity, price, date, phone, paid, transactionId } = order;
 
     const options = {
         render: (message, onConfirm, onCancel) => {
@@ -23,6 +26,7 @@ const Order = ({ order, refetch }) => {
 
     const handleDelete = async () => {
         const result = await confirm("Are you sure?", options);
+        setDeleting(true)
         if (result) {
             fetch(`https://vast-citadel-09653.herokuapp.com/delete/${_id}`, {
                 method: 'DELETE',
@@ -35,6 +39,7 @@ const Order = ({ order, refetch }) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                    setDeleting(false)
                     refetch();
                 })
         }
@@ -42,15 +47,33 @@ const Order = ({ order, refetch }) => {
     };
 
     return (
-        <tr>
-            <td><img className="w-20" src={image} alt="" /></td>
-            <td>{name}</td>
-            <td>{quantity}</td>
-            <td>${price}</td>
-            <td>{date}</td>
-            <td>{phone}</td>
-            <td><button onClick={handleDelete} className="btn btn-error">Cancel</button></td>
-        </tr>
+        <>
+            <tr>
+                <td><img className="w-20" src={image} alt="" /></td>
+                <td>{name}</td>
+                <td>{quantity}</td>
+                <td>${price}</td>
+                <td>{date}</td>
+                <td>{phone}</td>
+                <td>
+                    {!paid ?
+                        <div>
+                            <Link to={`/dashboard/payment/${_id}`}><button className="btn btn-sm btn-success">Pay</button></Link>
+                            <button onClick={handleDelete} className="btn btn-sm btn-error ml-2">
+                                { deleting ? <svg className="animate-spin h-4 w-4 rounded-full bg-transparent border-2 border-transparent border-opacity-50 mx-2" style={{"border-right-color": "white", "border-top-color": "white"}} viewBox="0 0 24 24"></svg> : "Cancel"}
+                            </button>
+                        </div>
+                        :
+                        <div>
+                            <span className="text-success font-medium uppercase">Paid</span> <br />
+                            <small>Transaction ID: </small>
+                            <small className="text-orange-500 block break-all">{transactionId}</small>
+                        </div>
+                    }
+                </td>
+                <td></td>
+            </tr>
+        </>
     );
 };
 

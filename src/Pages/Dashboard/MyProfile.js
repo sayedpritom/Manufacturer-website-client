@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
-    const { displayName: name, photoURL: image, email } = user;
     const [userDetails, setUserDetails] = useState({})
+
+    const { displayName: name, photoURL: image, email } = user;
     let { education, location, phone, linkedIn } = userDetails;
 
-    useEffect(() => {
-        fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
-            headers: {
-                method: 'Get',
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
+    const { data, isLoading, refetch } = useQuery('userDetails', () => fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setUserDetails(data)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setUserDetails(data)
-            })
-    }, [])
+    )
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
 
@@ -34,6 +37,7 @@ const MyProfile = () => {
     useEffect(() => {
         const newUser = { education: educationInput, location, phone, linkedIn };
         setUserDetails(newUser);
+        console.log(userDetails, newUser)
     }, [educationInput])
 
     useEffect(() => {
@@ -53,7 +57,6 @@ const MyProfile = () => {
 
 
     const onSubmit = () => {
-        console.log(userDetails)
         fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
             method: 'PUT',
             headers: {
@@ -64,11 +67,11 @@ const MyProfile = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 if (data.acknowledged) {
-                    console.log(data)
+                    console.log(userDetails)
                     toast.success('Information Updated Successfully');
                     reset();
+                    refetch();
                 }
             })
             .catch((error) => {

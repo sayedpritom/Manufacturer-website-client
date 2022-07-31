@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { confirm } from "react-confirm-box";
 
 const ManageAnOrder = ({ order, refetch }) => {
-
+    const [deleting, setDeleting] = useState(false);
     const { _id, image, name, quantity, price, date, phone } = order;
 
     const options = {
@@ -24,6 +24,7 @@ const ManageAnOrder = ({ order, refetch }) => {
 
     const handleDelete = async () => {
         const result = await confirm("Are you sure?", options);
+        setDeleting(true)
         if (result) {
             fetch(`https://vast-citadel-09653.herokuapp.com/delete/${_id}`, {
                 method: 'DELETE',
@@ -37,6 +38,7 @@ const ManageAnOrder = ({ order, refetch }) => {
                 .then(data => {
                     refetch();
                     console.log(data)
+                    setDeleting(false)
                 })
         }
         return
@@ -50,7 +52,9 @@ const ManageAnOrder = ({ order, refetch }) => {
             <td>${price}</td>
             <td>{date}</td>
             <td>{phone}</td>
-            <td><button onClick={handleDelete} className="btn btn-error">Delete</button></td>
+            <td><button onClick={handleDelete} className="btn btn-error">
+                {deleting ? <svg className="animate-spin h-4 w-4 rounded-full bg-transparent border-2 border-transparent border-opacity-50 mx-2" style={{ "border-right-color": "white", "border-top-color": "white" }} viewBox="0 0 24 24"></svg> : "Delete"}
+            </button></td>
         </tr>
     );
 };

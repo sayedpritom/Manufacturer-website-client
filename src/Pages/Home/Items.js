@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import Item from './Item';
 
 const Items = () => {
-    const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        fetch('https://vast-citadel-09653.herokuapp.com/parts')
-        .then(res => res.json())
-        .then(data => setItems(data))
-    }, [])
+    const { data: items, isLoading, } = useQuery('parts', () => fetch('https://vast-citadel-09653.herokuapp.com/parts', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
+    )
+        .then(response => response.json()))
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
+
     return (
         <div>
             <div className="my-28">

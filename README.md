@@ -2,6 +2,8 @@
 
 ## Live Website Link: https://manufacturer-website-af272.web.app/
 
+## Website & code overview video on Youtube: https://www.youtube.com/watch?v=ZM3G704p-90
+
 ## Website Features and Functionalities:
 * Email/ password (login/Register) based login system
 * Private/Protected Route
