@@ -48,15 +48,15 @@ const SignUp = () => {
 
     return (
         <div>
-            <div className="card w-96 lg:w-1/3 mx-auto my-10 bg-base-100 shadow-xl p-5">
+            <div className="card w-96 lg:w-1/3 mx-auto my-10 bg-white shadow-xl p-5">
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">Please Sing Up to proceed</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-                        <input type="Name" {...register("name", { required: true })} placeholder="Name" className="input input-bordered input-info w-full my-3 max-w-md" />
+                        <input type="Name" {...register("name", { required: true })} placeholder="Name" className="input bg-white input-bordered input-info w-full my-3 max-w-md" />
                         <br />
-                        <input type="email" {...register("email", { required: true })} placeholder="Email Address" className="input input-bordered input-info w-full my-3 max-w-md" />
+                        <input type="email" {...register("email", { required: true })} placeholder="Email Address" className="input bg-white input-bordered input-info w-full my-3 max-w-md" />
                         <br />
-                        <input type="password" {...register("password", { required: true })} placeholder="Password" className="input input-bordered input-info w-full my-3 max-w-md" />
+                        <input type="password" {...register("password", { required: true })} placeholder="Password" className="input bg-white input-bordered input-info w-full my-3 max-w-md" />
                         <br />
                         <input type="submit" className="btn btn-primary" value="Sign Up" />
                     </form>

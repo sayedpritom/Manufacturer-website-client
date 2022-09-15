@@ -4,7 +4,7 @@ import manufacturers from '../../assets/images/maufacturer.png';
 const MechanicalNeed = () => {
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-white">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="flex-1">
                         <img className="w-4/6 rounded-xl" src={manufacturers} />

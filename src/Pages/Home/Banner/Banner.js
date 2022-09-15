@@ -5,7 +5,7 @@ import './Banner.css';
 const Banner = () => {
 return (
     <section>
-        <div className={`flex flex-col md:flex-row items-center justify-between banner my-20 lg:my-0 `}>
+        <div className={`flex flex-col md:flex-row items-center bg-white justify-between banner my-20 lg:my-0 `}>
             <div className="flex-1 m-20 md:m-0 block mx-auto">
                 <img className="px-20 md:p-0" src={backgroundImage} alt="" />
             </div>

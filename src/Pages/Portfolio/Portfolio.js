@@ -2,8 +2,8 @@ import React from 'react';
 
 const Portfolio = () => {
     return (
-        <div class="card max-w-7xl mx-auto px-10 card-side bg-base-100 my-10 shadow-xl">
-            <div class="card-body">
+        <div class="bg-white">
+            <div class="max-w-7xl mx-auto card p-10 my-20 shadow-xl">
                 <h3 className="text-3xl text-primary font-medium">Sayed Pritom</h3>
                 <h3 className="text-xl font-medium">sayedpritom999@gmail.com</h3>
                 <hr className="my-5" />

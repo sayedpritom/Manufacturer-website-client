@@ -67,7 +67,7 @@ const AddAProduct = () => {
             <hr className='my-5' />
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* user name */}
-                <input type="text" {...register("name", { required: true })} placeholder="Product Name" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
+                <input type="text" {...register("name", { required: true })} placeholder="Product Name" className="input bg-white input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.name && <span className="block ml-2 text-red-400">{errors.name && 'name'} is required</span>} <br />
                 {/* product image */}
                 <input type="file" {...register("image", {
@@ -75,19 +75,19 @@ const AddAProduct = () => {
                         value: true,
                         message: 'Image is required'
                     }
-                })} className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
+                })} className="input bg-white input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.image && <span className="block ml-2 text-red-400">{errors.image && 'image'} is required</span>} <br />
                 {/* product description */}
-                <textarea type="text" {...register("description", { required: true })} placeholder="Product Description" className="input input-bordered input-lg w-full max-w-lg h-40 m-2"></textarea> <br />
+                <textarea type="text" {...register("description", { required: true })} placeholder="Product Description" className="input bg-white input-bordered input-lg w-full max-w-lg h-40 m-2"></textarea> <br />
                 {errors.description && <span className="block ml-2 text-red-400">{errors.description && 'description'} is required</span>} <br />
                 {/* minimum order amount */}
-                <input type="number" {...register("minimumOrder", { required: true })} placeholder="Minimum Order Quantities" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
+                <input type="number" {...register("minimumOrder", { required: true })} placeholder="Minimum Order Quantities" className="input bg-white input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.minimumOrder && <span className="block ml-2 text-red-400">{errors.minimumOrder && 'minimumOrder'} is required</span>} <br />
                 {/* stock */}
-                <input type="text" {...register("stock", { required: true })} placeholder="Current Stock" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
+                <input type="text" {...register("stock", { required: true })} placeholder="Current Stock" className="input bg-white input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.stock && <span className="block ml-2 text-red-400">{errors.stock && 'stock'} is required</span>} <br />
                 {/* price */}
-                <input type="text" {...register("price", { required: true })} placeholder="Product Price" className="input input-bordered input-md w-full max-w-xs m-2" /> <br />
+                <input type="text" {...register("price", { required: true })} placeholder="Product Price" className="input bg-white input-bordered input-md w-full max-w-xs m-2" /> <br />
                 {errors.price && <span className="block ml-2 text-red-400">{errors.price && 'price'} is required</span>} <br />
                 <input className={`btn btn-primary ml-2`} type="submit" value="Add Product" />
             </form>

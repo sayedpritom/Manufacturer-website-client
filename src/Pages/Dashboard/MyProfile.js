@@ -81,7 +81,7 @@ const MyProfile = () => {
 
     return (
         <div>
-            <div class="card lg:card-side bg-base-100 shadow-lg">
+            <div class="card lg:card-side bg-white shadow-lg">
                 <div class="card-body">
                     <h2 class="card-title text-3xl text-primary">{name}</h2>
                     <p>{email}</p>
@@ -91,19 +91,19 @@ const MyProfile = () => {
                             <div className='grid grid-cols-1 xl:grid-cols-2 gap-5'>
                                 <div>
                                     <label for="education">Education:</label> <br />
-                                    <input type="text" {...register("education")} value={userDetails.education} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("education")} value={userDetails.education} className=" bg-white input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                                 <div>
                                     <label for="location">Location:</label> <br />
-                                    <input type="text" {...register("location")} value={userDetails.location} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("location")} value={userDetails.location} className=" bg-white input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                                 <div>
                                     <label for="phone">Phone Number:</label> <br />
-                                    <input type="text" {...register("phone")} value={userDetails.phone} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("phone")} value={userDetails.phone} className=" bg-white input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                                 <div>
                                     <label for="LinkedIn">LinkedIn Profile:</label> <br />
-                                    <input type="text" {...register("linkedIn")} value={userDetails.linkedIn} className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
+                                    <input type="text" {...register("linkedIn")} value={userDetails.linkedIn} className=" bg-white input input-bordered input-md w-full max-w-lg m-2" /> <br />
                                 </div>
                             </div>
                             <input className={`btn btn-primary my-4 ml-2`} type="submit" value="Update Information" />

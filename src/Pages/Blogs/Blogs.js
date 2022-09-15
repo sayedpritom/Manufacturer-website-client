@@ -2,15 +2,15 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 mx-10 my-20">
-            <div class="card bg-base-100 shadow-xl">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 mx-10 py-20 bg-white ">
+            <div class="card bg-white shadow-xl">
                 <div class="card-body">
                     <h3 className="text-3xl text-primary font-medium">How will you improve the performance of a React Application?</h3>
                     <hr className="my-5" />
                     <p>For optimizing react application performance, all components should receive only the necessary props. Thus CPU consumption will be controlled and also unnecessary features will not be over rendered. Functional components can be helpful in this case. A functional component will collect all props and redistribute them to other components. Some other techniques are 1. Using React.Fragment to avoid adding extra nodes to the DOM, 2. Use Production Build for production before deploying, 3. Use React.Suspense and React.Lazy for Lazy Loading Components. The idea of lazy loading is to load a component only when it is needed. 4. use React.memo for component Memoization. It helps cache functional components. 5. Virtualize a Large Lists Using react-window. React-window renders only the items in a large list that are currently visible, thus it becomes efficient when showing lists of any size.</p>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-white shadow-xl">
                 <div class="card-body">
                     <h3 className="text-3xl text-primary font-medium">What are the different ways to manage a state in a React application</h3>
                     <hr className="my-5" />
@@ -31,7 +31,7 @@ const Blogs = () => {
 
                 </div>
             </div>
-            <div class="cardbg-base-100 shadow-xl">
+            <div class="cardbg-white shadow-xl">
                 <div class="card-body">
                     <h3 className="text-3xl text-primary font-medium">What is a unit test? Why it's necessary?</h3>
                     <hr className="my-5" />
@@ -40,7 +40,7 @@ const Blogs = () => {
                         Unit testing is necessary because it allows programmers to refactor code at a later date, and make sure the module still works correctly. Unit testing changes the nature of the debugging process. </p>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-white shadow-xl">
                 <div class="card-body">
                     <h3 className="text-3xl text-primary font-medium">How does prototypical inheritance work?</h3>
                     <hr className="my-5" />
@@ -48,7 +48,7 @@ const Blogs = () => {
                         Prototypical inheritance is a feature in javascript used to add methods and properties in objects. By this method an object can inherit the properties and methods of another object. </p>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-white shadow-xl">
                 <div class="card-body">
                     <h3 className="text-3xl text-primary font-medium">Why we do not set the state directly in React? </h3>
                     <hr className="my-5" />

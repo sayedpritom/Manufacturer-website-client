@@ -77,7 +77,7 @@ const PlaceOrder = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-10 py-20">
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-white shadow-xl">
                 <div className="max-w-xs mr-auto" >
                     <figure><img src={image} alt="Album" /></figure>
                 </div>
@@ -90,21 +90,21 @@ const PlaceOrder = () => {
                     <hr />
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* user name */}
-                        <input type="text" {...register("name")} value={user.displayName} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("name")} value={user.displayName} readOnly className=" bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* email address */}
-                        <input type="text" {...register("email")} value={user.email} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("email")} value={user.email} readOnly className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* Item Name */}
-                        <input type="text" {...register("item")} value={name} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("item")} value={name} readOnly className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* price */}
-                        <input type="text" {...register("price")} value={"$" + price} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("price")} value={"$" + price} readOnly className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* order date */}
-                        <input type="text" {...register("date")} value={formattedDate} readOnly className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("date")} value={formattedDate} readOnly className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* phone number */}
-                        <input type="text" {...register("phone", { required: true })} placeholder="Enter Your Phone Number" className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("phone", { required: true })} placeholder="Enter Your Phone Number" className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* shipping address */}
-                        <input type="text" {...register("address", { required: true })} placeholder="Enter Your Address" className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="text" {...register("address", { required: true })} placeholder="Enter Your Address" className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
                         {/* order quantity */}
-                        <input type="number" {...register("quantity")} onChange={handleChange} value={initialQuantity} min={minimumOrder} max={stock} placeholder="Please enter quantity" className="input input-bordered input-md w-full max-w-xs m-2" />
+                        <input type="number" {...register("quantity")} onChange={handleChange} value={initialQuantity} min={minimumOrder} max={stock} placeholder="Please enter quantity" className="input bg-white input-bordered input-md w-full max-w-xs m-2" />
 
                         {errors.phone && <span className="block ml-2 text-red-400">{errors.phone && 'Phone'} is required</span>}
                         {errors.address && <span className="block ml-2 text-red-400">{errors.address && 'Address'} is required</span>}

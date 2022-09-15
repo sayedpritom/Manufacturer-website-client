@@ -36,9 +36,9 @@ const AddAReview = () => {
         <div>
             <h1>Add Review</h1>
             <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" {...register("name")} value={user.displayName} readOnly className="input input-bordered input-md w-full max-w-lg m-2" /> <br />
-                <textarea type="text" {...register("review", { required: true })} placeholder="Share Your Experience" className="input input-bordered input-lg w-full max-w-lg h-40 m-2"></textarea>
-                <input type="number" {...register("rating", { required: true })} min="1" max="5" placeholder="Rate Your Experience Between 1-5" className="input input-bordered input-md w-full max-w-lg m-2"></input>
+                <input type="text" {...register("name")} value={user.displayName} readOnly className="input bg-white input-bordered input-md w-full max-w-lg m-2" /> <br />
+                <textarea type="text" {...register("review", { required: true })} placeholder="Share Your Experience" className="input bg-white input-bordered input-lg w-full max-w-lg h-40 m-2"></textarea>
+                <input type="number" {...register("rating", { required: true })} min="1" max="5" placeholder="Rate Your Experience Between 1-5" className="input bg-white input-bordered input-md w-full max-w-lg m-2"></input>
                 <br />
                 <input className={`btn btn-primary ml-2 my-4`} type="submit" value="Submit Review" />
             </form>

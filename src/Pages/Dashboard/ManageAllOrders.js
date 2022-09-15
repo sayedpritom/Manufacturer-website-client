@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import ManageAnOrder from './ManageAnOrder';
+import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
 
@@ -22,7 +23,7 @@ const ManageAllOrders = () => {
     return (
         <div>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-full bg-white">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

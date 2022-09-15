@@ -6,7 +6,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 const Review = ({ userReview }) => {
     const { name, review, rating } = userReview;
     return (
-        <div className="card w-full bg-base-100 shadow-xl">
+        <div className="card w-full bg-white shadow-xl">
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{review}</p>
