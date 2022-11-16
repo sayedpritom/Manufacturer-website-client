@@ -25,18 +25,16 @@ const Payment = () => {
         return <Loading></Loading>
     }
 
-console.log(order)
-
     return (
         <div>
             <h2 className="text-1xl">Please pay for: <span className="text-primary">{id}</span></h2>
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12" style={{"backgroundColor": "white"}}>
                 <div class="card-body">
                     <h2 class="card-title text-primary">{order?.item}</h2>
                     <p className="font-medium">Total ordered quantity: {order?.quantity} units, total cost: ${parseInt(order?.quantity) * order?.price}</p>
                 </div>
             </div>
-            <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
+            <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100" style={{"backgroundColor": "white"}}>
                 <div class="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm order={order} />
