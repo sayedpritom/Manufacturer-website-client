@@ -18,7 +18,7 @@
 * React, react components, router, react hook form, react query, React Toastify
 * Firebase(for website hosting, user login and registration)
 
-## Back-end(server) code link: https://github.com/sayedpritom999/Manufacturer-website-server
+## Back-end(server) code link: https://github.com/sayedpritom/Manufacturer-website-server
 
 ## In the back-end, the implemented APIs are: 
 1. Create users in MongoDB and issue a JWT token for the client
