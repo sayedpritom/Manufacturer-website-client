@@ -9,7 +9,7 @@ import Loading from '../Shared/Loading';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://vast-citadel-09653.herokuapp.com/orders/${user?.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://try-m1nm.onrender.com/orders/${user?.email}`, {
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

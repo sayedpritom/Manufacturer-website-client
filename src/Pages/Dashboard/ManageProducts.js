@@ -3,7 +3,7 @@ import Product from './Product';
 import Loading from '../Shared/Loading';
 
 const ManageProducts = () => {
-    const { data: items, isLoading, refetch } = useQuery('items', () => fetch(`https://vast-citadel-09653.herokuapp.com/parts`, {
+    const { data: items, isLoading, refetch } = useQuery('items', () => fetch(`https://try-m1nm.onrender.com/parts`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

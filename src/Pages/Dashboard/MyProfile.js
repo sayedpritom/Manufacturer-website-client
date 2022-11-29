@@ -13,7 +13,7 @@ const MyProfile = () => {
     const { displayName: name, photoURL: image, email } = user;
     let { education, location, phone, linkedIn } = userDetails;
 
-    const { data, isLoading, refetch } = useQuery('userDetails', () => fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
+    const { data, isLoading, refetch } = useQuery('userDetails', () => fetch(`https://try-m1nm.onrender.com/userDetails/${email}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const MyProfile = () => {
 
 
     const onSubmit = () => {
-        fetch(`https://vast-citadel-09653.herokuapp.com/userDetails/${email}`, {
+        fetch(`https://try-m1nm.onrender.com/userDetails/${email}`, {
             method: 'PUT',
             headers: {
                 'content-Type': 'application/json',

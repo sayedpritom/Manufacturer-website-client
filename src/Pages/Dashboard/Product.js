@@ -8,7 +8,7 @@ const Product = ({ item, index, refetch }) => {
 
     const handleRemove = () => {
         setDeleting(true);
-        fetch(`https://vast-citadel-09653.herokuapp.com/item/${_id}`, {
+        fetch(`https://try-m1nm.onrender.com/item/${_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

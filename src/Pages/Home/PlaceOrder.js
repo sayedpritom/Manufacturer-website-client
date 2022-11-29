@@ -42,7 +42,7 @@ const PlaceOrder = () => {
 
 
     useEffect(() => {
-        fetch(`https://vast-citadel-09653.herokuapp.com/parts/${id}`)
+        fetch(`https://try-m1nm.onrender.com/parts/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data[0])
@@ -55,7 +55,7 @@ const PlaceOrder = () => {
         data.price = price;
         data.image = image;
         data.quantity = initialQuantity;
-        fetch('https://vast-citadel-09653.herokuapp.com/order', {
+        fetch('https://try-m1nm.onrender.com/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

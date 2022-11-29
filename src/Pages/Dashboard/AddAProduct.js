@@ -36,7 +36,7 @@ const AddAProduct = () => {
                     }
                     console.log(product)
                     // send data to database
-                    fetch('https://vast-citadel-09653.herokuapp.com/addProduct', {
+                    fetch('https://try-m1nm.onrender.com/addProduct', {
                         method: 'POST',
                         headers: {
                             'content-Type': 'application/json',

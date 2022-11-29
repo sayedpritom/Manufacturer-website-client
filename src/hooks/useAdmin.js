@@ -5,7 +5,7 @@ const useAdmin = user => {
     const [adminLoading, setAdminLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`https://vast-citadel-09653.herokuapp.com/admin/${user.email}`, {
+        fetch(`https://try-m1nm.onrender.com/admin/${user.email}`, {
             method: 'GET',
             headers: {
                 'content-Type': 'application/json',

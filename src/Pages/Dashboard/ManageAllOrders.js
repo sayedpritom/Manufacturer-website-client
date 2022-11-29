@@ -6,7 +6,7 @@ import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://vast-citadel-09653.herokuapp.com/allOrders/`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://try-m1nm.onrender.com/allOrders/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
     // const [users, setUsers] = useState([]);
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`https://vast-citadel-09653.herokuapp.com/users`, {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`https://try-m1nm.onrender.com/users`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

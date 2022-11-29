@@ -26,7 +26,7 @@ const ManageAnOrder = ({ order, refetch }) => {
         const result = await confirm("Are you sure?", options);
         setDeleting(true)
         if (result) {
-            fetch(`https://vast-citadel-09653.herokuapp.com/delete/${_id}`, {
+            fetch(`https://try-m1nm.onrender.com/delete/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-type': 'application/json',

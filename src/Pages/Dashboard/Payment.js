@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51LHYudDkWragjx8KesnC1upjgYx11cHs11sna
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://vast-citadel-09653.herokuapp.com/order/${id}`;
+    const url = `https://try-m1nm.onrender.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery('order', () => fetch(url, {
         method: 'GET',

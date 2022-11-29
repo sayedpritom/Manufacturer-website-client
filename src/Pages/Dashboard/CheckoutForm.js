@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
     // console.log(totalPrice);
 
     useEffect(() => {
-        fetch('https://vast-citadel-09653.herokuapp.com/create-payment-intent', {
+        fetch('https://try-m1nm.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id,
             }
-            fetch(`https://vast-citadel-09653.herokuapp.com/order/${_id}`, {
+            fetch(`https://try-m1nm.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import Item from './Item';
 
 const Items = () => {
 
-    const { data: items, isLoading, } = useQuery('parts', () => fetch('https://vast-citadel-09653.herokuapp.com/parts', {
+    const { data: items, isLoading, } = useQuery('parts', () => fetch('https://try-m1nm.onrender.com/parts', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
